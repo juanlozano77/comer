@@ -1,0 +1,93 @@
+
+:root{
+  --bg:#1a1418;
+  --panel:#261b24;
+  --panel-2:#352230;
+  --panel-3:#462b3b;
+  --line:#6e465b;
+  --accent:#b25a7d;
+  --accent-2:#d889a7;
+  --text:#f8eef2;
+  --muted:#d7c1cb;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:linear-gradient(180deg,#161116 0%, #1f1820 100%);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:inherit}
+button{font:inherit}
+.app-shell{min-height:100vh}
+.topbar{
+  position:sticky; top:0; z-index:3000;
+  display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:10px;
+  padding:10px 12px;
+  background:linear-gradient(180deg,var(--panel),var(--panel-2));
+  border-bottom:1px solid var(--line);
+  box-shadow:0 2px 15px rgba(0,0,0,.55);
+}
+.title-pill{
+  background:rgba(255,255,255,.05); border:1px solid var(--line); color:#ffe1eb;
+  padding:8px 12px; border-radius:999px; font-weight:700;
+}
+.btn, .control-btn{
+  border:none; cursor:pointer; text-decoration:none;
+  background:#533446; color:white; padding:9px 13px; border-radius:10px;
+  border:1px solid #744b61; box-shadow:var(--shadow);
+}
+.btn:hover, .control-btn:hover{background:#684256}
+.controls{
+  display:flex; align-items:center; gap:8px; background:#241a22;
+  padding:5px 10px; border-radius:12px; border:1px solid var(--line)
+}
+.zoom-val{
+  min-width:58px; text-align:center; font-weight:700; font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.page{
+  max-width:1100px; margin:0 auto; padding:24px;
+}
+.hero{
+  background:linear-gradient(135deg,var(--panel) 0%, var(--panel-3) 100%);
+  border:1px solid var(--line); border-radius:24px; padding:28px; box-shadow:var(--shadow); margin-bottom:18px;
+}
+.hero h1{margin:0 0 8px; font-size:clamp(1.7rem,3vw,2.5rem)}
+.hero p{margin:0; color:var(--muted); line-height:1.55}
+.chapter-grid{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px;
+}
+.chapter-card{
+  display:block; background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:18px;
+  padding:18px; text-decoration:none; box-shadow:var(--shadow); transition:.18s ease;
+}
+.chapter-card:hover{transform:translateY(-2px); border-color:var(--accent-2)}
+.chapter-tag{
+  display:inline-block; padding:4px 10px; border-radius:999px;
+  background:rgba(216,137,167,.16); color:#ffdbe7; font-size:.82rem; margin-bottom:10px;
+}
+.chapter-name{font-weight:800; margin-bottom:6px}
+.chapter-meta{color:var(--muted)}
+.reader-wrap{padding:14px 0 36px}
+.book{
+  display:flex; flex-direction:column; align-items:center; width:100%;
+}
+.page-box{
+  position:relative;
+  width:738px;
+  aspect-ratio:738 / 1041;
+  margin:0 0 22px 0;
+  background:white;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.8);
+  flex:0 0 auto;
+}
+.page-scale{
+  position:absolute; top:0; left:0; width:738px; height:1041px; transform-origin:top left;
+}
+.muted{color:var(--muted)}
+.status{padding:40px 20px; text-align:center; color:var(--muted)}
+.home-link{margin-right:auto}
+.chapter-nav{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+@media (max-width: 760px){
+  .topbar{justify-content:flex-start}
+  .home-link{margin-right:0}
+  .title-pill{width:100%}
+  .page{padding:16px}
+}
